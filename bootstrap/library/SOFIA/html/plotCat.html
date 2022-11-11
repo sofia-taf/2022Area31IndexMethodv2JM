@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot Categories</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plotCat {SOFIA}"><tr><td>plotCat {SOFIA}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot Categories</h2>
+
+<h3>Description</h3>
+
+<p>Plot a summary of stock status categories by year: underfished (green), fully
+fished (yellow), or overfished (red).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plotCat(dat, method = "cmsy.naive", cats = 4, type = "count")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dat</code></td>
+<td>
+<p>data frame of stock time series, containing columns named
+<code>bbmsy</code> and <code>ffmsy</code>, as well as method-specific
+<code>bbmsy.*</code> and <code>ffmsy.*</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>method</code></td>
+<td>
+<p>string indicating which method was used to estimate B/Bmsy and
+F/Fmsy.</p>
+</td></tr>
+<tr valign="top"><td><code>cats</code></td>
+<td>
+<p>either <code>3</code> or <code>4</code>, indicating whether to plot the stock
+status based on biomass only (3 categories) or based on biomass and
+fishing mortality (4 categories).</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>string indicating the type of plot, either <code>"count"</code> or
+<code>"stock"</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The first two columns in <code>dat</code> are treated as <code>'stock'</code> and
+<code>'year'</code>, regardless of the actual column names.
+</p>
+<p>The last column names in <code>dat</code> should contain the <code>method</code> name as
+a suffix. For example, if <code>method = "effEdepP"</code>, then this function will
+look for columns called <code>bbmsy.effEdepP</code> and <code>ffmsy.effEdepP</code>.
+</p>
+<p>The <code>type</code> argument supports legacy synonyms, where <code>"prop"</code> is the
+same as <code>"count"</code>, and <code>"all"</code> is the same as <code>"stock"</code>.
+</p>
+
+
+<h3>Value</h3>
+
+<p>A <code>ggplot</code> object.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Rishi Sharma and Arni Magnusson.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../ggplot2/html/ggplot.html">ggplot</a></code> is the underlying function used to produce the plot.
+</p>
+<p><code><a href="calcCat.html">calcCat</a></code> calculates stock status categories.
+</p>
+<p><code><a href="SOFIA-package.html">SOFIA-package</a></code> gives an overview of the package.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+plotCat(stock.timeseries, method="effEdepP", cats=3, type="count")
+plotCat(stock.timeseries, method="effEdepP", cats=3, type="stock")
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SOFIA</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

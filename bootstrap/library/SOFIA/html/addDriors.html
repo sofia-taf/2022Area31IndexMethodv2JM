@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add Driors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for addDriors {SOFIA}"><tr><td>addDriors {SOFIA}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add Driors</h2>
+
+<h3>Description</h3>
+
+<p>Add driors (data and priors) column to &lsquo;stocks&rsquo; object.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+addDriors(stocks, priors, same.priors, shape_prior = 2,
+  growth_rate_prior_cv = 0.2, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>stocks</code></td>
+<td>
+<p><code>tibble</code> containing <code>stock</code> and <code>data</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>priors</code></td>
+<td>
+<p>data frame containing <code>stock</code>, <code>initial_state</code>,
+<code>initial_state_cv</code>, <code>terminal_state</code>, and
+<code>terminal_state_cv</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>same.priors</code></td>
+<td>
+<p>whether to use the same priors for all stocks.</p>
+</td></tr>
+<tr valign="top"><td><code>shape_prior</code></td>
+<td>
+<p>passed to <code>format_driors</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>growth_rate_prior_cv</code></td>
+<td>
+<p>passed to <code>format_driors</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional arguments passed to <code>format_driors</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>If <code>same.priors = TRUE</code> then the priors where <code>stock = All</code> are
+used for all stocks.
+</p>
+<p>If <code>same.priors = FALSE</code> then the priors are read from stock-specific
+rows in the <code>priors</code> data frame.
+</p>
+
+
+<h3>Value</h3>
+
+<p>A <code>tibble</code> like <code>stocks</code> but with the additional column
+<code>driors</code>.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Arni Magnusson.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../sraplus/html/format_driors.html">format_driors</a></code> is the underlying function used to construct the
+<code>driors</code> column.
+</p>
+<p><code><a href="addEffort.html">addEffort</a></code> adds an effort column to catch data.
+</p>
+<p><code><a href="SOFIA-package.html">SOFIA-package</a></code> gives an overview of the package.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+addDriors(stocks, priors, same.priors=TRUE)
+addDriors(stocks, priors, same.priors=FALSE)
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SOFIA</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

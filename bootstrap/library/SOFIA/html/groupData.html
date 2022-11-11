@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Group Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for groupData {SOFIA}"><tr><td>groupData {SOFIA}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Group Data</h2>
+
+<h3>Description</h3>
+
+<p>Group primary single-stock data files in subdirectories, depending on what
+columns each data file contains.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+groupData(dir, quiet = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dir</code></td>
+<td>
+<p>directory containing the primary data files.</p>
+</td></tr>
+<tr valign="top"><td><code>quiet</code></td>
+<td>
+<p>whether to suppress screen output.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Files are copied into subdirectories. As a byproduct, a list is returned,
+describing which subdirectories contain which data files.
+</p>
+
+
+<h3>Note</h3>
+
+<p>A primary data file can have a filename such as
+&lsquo;<span class="file">Yellowtail_snapper_Mexico.csv</span>&rsquo; and columns such as
+<code>stockid|scientificname|commonname|year|catch|stocklong</code>.
+</p>
+<p>In addition, the data file may have columns called <code>best_effort</code> and/or
+<code>best_index</code>, containing the effort and/or index series to be used in
+the SOFIA analysis.
+</p>
+<p>This function creates four subdirectories:
+</p>
+
+<ol>
+<li> <p><code>both</code> - for data files containing both effort and index data
+</p>
+</li>
+<li> <p><code>effort</code> - for data files containing effort data (and possibly
+also index)
+</p>
+</li>
+<li> <p><code>index</code> - for data files containing index data (and possibly also
+effort)
+</p>
+</li>
+<li> <p><code>neither</code> - for data files containing neither effort nor index
+data
+</p>
+</li></ol>
+
+<p>The object returned has an attribute <code>count</code>, showing the number of data
+files in each subdirectory. The number of original (unique) data files will
+be:
+</p>
+<pre>
+  both + (effort-both) + (index-both) + neither
+</pre>
+<p>The functions <code>groupData</code> and <code>convertData</code> are used together:
+first group, then convert.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Arni Magnusson.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="convertData.html">convertData</a></code> converts primary data to combined data.
+</p>
+<p><code><a href="SOFIA-package.html">SOFIA-package</a></code> gives an overview of the package.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+groupData("Data_files_Area_31_3")
+groupData("Data_files_Area_31_3", quiet=TRUE)
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SOFIA</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

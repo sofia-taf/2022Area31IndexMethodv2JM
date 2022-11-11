@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: List Repositories</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gitRepos {SOFIA}"><tr><td>gitRepos {SOFIA}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>List Repositories</h2>
+
+<h3>Description</h3>
+
+<p>List all GitHub repositories owned by an organization or user.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+gitRepos(owner = "sofia-taf", full = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>owner</code></td>
+<td>
+<p>name of a GitHub organization or user.</p>
+</td></tr>
+<tr valign="top"><td><code>full</code></td>
+<td>
+<p>whether to include owner name in output.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>String vector of repository names.
+</p>
+
+
+<h3>Note</h3>
+
+<p>This function uses the <a href="https://docs.github.com/en/rest">GitHub API</a> to
+fetch repository names, using base R.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Arni Magnusson.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="gitClone.html">gitClone</a></code> clones a repository from GitHub.
+</p>
+<p><code><a href="gitCloneAll.html">gitCloneAll</a></code> clones all SOFIA-TAF repositories from GitHub.
+</p>
+<p><code><a href="SOFIA-package.html">SOFIA-package</a></code> gives an overview of the package.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+gitRepos()
+gitRepos("arni-magnusson", full=TRUE)
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SOFIA</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

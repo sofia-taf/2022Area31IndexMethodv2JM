@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Clone All</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gitCloneAll {SOFIA}"><tr><td>gitCloneAll {SOFIA}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Clone All</h2>
+
+<h3>Description</h3>
+
+<p>Clone all SOFIA-TAF repositories from GitHub.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+gitCloneAll(topdir = "c:/git/sofia-taf", method = "https", tree = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>topdir</code></td>
+<td>
+<p>local empty directory to clone to.</p>
+</td></tr>
+<tr valign="top"><td><code>method</code></td>
+<td>
+<p>cloning method, either <code>"https"</code> or <code>"ssh"</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>tree</code></td>
+<td>
+<p>whether to organize repositories in a nested SOFIA tree, see
+details below.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Generally, the default <code>method = "https"</code> works best in Windows, while
+<code>method = "ssh"</code> works best in Linux.
+</p>
+<p>When <code>tree = TRUE</code>, this function will recognize standard SOFIA
+repository names such as <code>2022Area37Demo</code> and clone to a nested
+subdirectory <code>2022/Area37/Demo</code> instead of <code>2022Area37Demo</code>.
+</p>
+
+
+<h3>Value</h3>
+
+<p>String vector of cloned repositories.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Arni Magnusson.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="gitRepos.html">gitRepos</a></code> fetches a complete list of GitHub repositories.
+</p>
+<p><code><a href="gitClone.html">gitClone</a></code> clones a repository from GitHub.
+</p>
+<p><code><a href="SOFIA-package.html">SOFIA-package</a></code> gives an overview of the package.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+gitCloneAll()
+gitCloneAll("~/git/sofia-taf", "ssh")
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SOFIA</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

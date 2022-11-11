@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add Index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for addIndex {SOFIA}"><tr><td>addIndex {SOFIA}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add Index</h2>
+
+<h3>Description</h3>
+
+<p>Add index column to catch data.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+addIndex(catch, index, same.index)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>catch</code></td>
+<td>
+<p><code>tibble</code> containing <code>year</code>, <code>stock</code>, and
+<code>capture</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>index</code></td>
+<td>
+<p><code>tibble</code> containing <code>year</code>, <code>stock</code>, and
+<code>index</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>same.index</code></td>
+<td>
+<p>whether to use the same index data for all stocks.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>If <code>same.index = TRUE</code> then the index data for <code>stock$All</code> is used
+for all stocks.
+</p>
+<p>If <code>same.index = FALSE</code> then the catch and index data are paired by year
+and stock.
+</p>
+
+
+<h3>Value</h3>
+
+<p>Data frame like <code>catch</code> but with the additional column <code>index</code>.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Arni Magnusson.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../base/html/merge.html">merge</a></code> is the underlying function used to merge the two data
+frames.
+</p>
+<p><code><a href="addEffort.html">addEffort</a></code> adds an effort column to catch data.
+</p>
+<p><code><a href="addDriors.html">addDriors</a></code> adds a driors column to stocks.
+</p>
+<p><code><a href="SOFIA-package.html">SOFIA-package</a></code> gives an overview of the package.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+addIndex(catch, index, same.index=TRUE)
+addIndex(catch, index, same.index=FALSE)
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SOFIA</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

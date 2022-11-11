@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add Effort</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for addEffort {SOFIA}"><tr><td>addEffort {SOFIA}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add Effort</h2>
+
+<h3>Description</h3>
+
+<p>Add effort column to catch data.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+addEffort(catch, effort, same.effort)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>catch</code></td>
+<td>
+<p><code>tibble</code> containing <code>year</code>, <code>stock</code>, and
+<code>capture</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>effort</code></td>
+<td>
+<p><code>tibble</code> containing <code>year</code>, <code>stock</code>, and
+<code>effort</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>same.effort</code></td>
+<td>
+<p>whether to use the same effort data for all stocks.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>If <code>same.effort = TRUE</code> then the effort data for <code>stock$All</code> is
+used for all stocks.
+</p>
+<p>If <code>same.effort = FALSE</code> then the catch and effort data are paired by
+year and stock.
+</p>
+
+
+<h3>Value</h3>
+
+<p>Data frame like <code>catch</code> but with the additional column <code>effort</code>.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Arni Magnusson.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../base/html/merge.html">merge</a></code> is the underlying function used to merge the two data
+frames.
+</p>
+<p><code><a href="addIndex.html">addIndex</a></code> adds an index column to catch data.
+</p>
+<p><code><a href="addDriors.html">addDriors</a></code> adds a driors column to stocks.
+</p>
+<p><code><a href="SOFIA-package.html">SOFIA-package</a></code> gives an overview of the package.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+addEffort(catch, effort, same.effort=TRUE)
+addEffort(catch, effort, same.effort=FALSE)
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SOFIA</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

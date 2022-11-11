@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Clone</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gitClone {SOFIA}"><tr><td>gitClone {SOFIA}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Clone</h2>
+
+<h3>Description</h3>
+
+<p>Clone a repository from GitHub.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+gitClone(repo, topdir = "c:/git/sofia-taf", method = "https",
+  tree = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>repo</code></td>
+<td>
+<p>GitHub repository of the form <code>"repo"</code> or
+<code>"owner/repo"</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>topdir</code></td>
+<td>
+<p>local directory above the repository.</p>
+</td></tr>
+<tr valign="top"><td><code>method</code></td>
+<td>
+<p>cloning method, either <code>"https"</code> or <code>"ssh"</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>tree</code></td>
+<td>
+<p>whether to organize repositories in a nested SOFIA tree, see
+details below.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The implicit default <code>repo</code> owner is <code>sofia-taf</code>. In other words,
+if the user specifies a <code>"repo"</code> instead of <code>"owner/repo"</code>, this
+function will automatically convert it to <code>"sofia-taf/repo"</code>.
+</p>
+<p>Generally, the default <code>method = "https"</code> works best in Windows, while
+<code>method = "ssh"</code> works best in Linux.
+</p>
+<p>When <code>tree = TRUE</code>, this function will recognize standard SOFIA
+repository names such as <code>2022Area37Demo</code> and clone to a nested
+subdirectory <code>2022/Area37/Demo</code> instead of <code>2022Area37Demo</code>. For
+repository names that do not follow this YearAreaAnalysis pattern, the value
+of <code>tree</code> has no effect.
+</p>
+
+
+<h3>Value</h3>
+
+<p>String containing the cloning command.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Arni Magnusson.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="gitRepos.html">gitRepos</a></code> fetches a complete list of GitHub repositories.
+</p>
+<p><code><a href="gitCloneAll.html">gitCloneAll</a></code> clones all SOFIA-TAF repositories from GitHub.
+</p>
+<p><code><a href="SOFIA-package.html">SOFIA-package</a></code> gives an overview of the package.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+gitClone("2022Area37Demo")
+gitClone("2022Area37Demo", "~/git/sofia-taf", method="ssh")
+gitClone("arni-magnusson/areaplot", "~/git/arni-magnusson", method="ssh")
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SOFIA</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>
